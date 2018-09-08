@@ -1,12 +1,25 @@
 import React, { Component} from 'react';
 import { StyleSheet, Text, View, Image, StatusBar } from 'react-native';
 import Weather from './Weather';
-import { Ionicons } from '@expo/vector-icons';
+import SQLite from 'expo/src/SQLite';
 
 export default class App extends Component {
   state = {
-    isLoaded: true
+    isLoaded: false
   };
+
+  componentDidMount(){
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          this.setState({
+            isLoaded: true
+          })
+        },
+        error => {
+          console.log(error);
+        }
+      )
+  }
 
   render() {
     const { isLoaded } = this.state;
@@ -38,6 +51,6 @@ const styles = StyleSheet.create({
   },
   loadingText:{
     fontSize: 38,
-    marginBottom: 100
+    marginBottom: 30
   }
 }); 
