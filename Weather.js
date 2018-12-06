@@ -38,7 +38,7 @@ const weatherCases = {
     Drizzle: {
         color: ["#89F7FE", "#66A6FF"],
         title: 'Drizzle',
-        subtitle: 'It\'s like a rain, but gay 🏳️‍🌈',
+        subtitle: 'It\'s like a rain.',
         icon: 'weather-rainy'
     },
     Haze: {
